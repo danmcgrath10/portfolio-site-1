@@ -1,0 +1,191 @@
+{
+  "profile": {
+    "name": "Daniel E. McGrath",
+    "headline": "Full-Stack / Backend Software Engineer • Performance & Developer Productivity",
+    "location": "Malden, MA",
+    "summary": "Full-stack / backend software engineer with 5+ years across Java/JavaFX/Web apps, data platforms, and AWS. Known for improving concurrency, scaling messaging systems, and shipping internal tools that cut cycle time. Recently impacted by company-wide restructuring and now seeking backend/infra roles where performance and developer productivity matter.",
+    "links": {
+      "email": "danmcgrath1035@gmail.com",
+      "phone": "+1 (603) 548-1168"
+    }
+  },
+  "skills": {
+    "languages": ["Java", "JavaScript", "Python", "SQL", "Scala"],
+    "frameworks": ["JavaFX", "Next.js", "Angular", "ASP.NET", "React Native"],
+    "cloud": ["AWS", "Docker"],
+    "data": ["Spark", "Hive", "Vertica", "Database Design"],
+    "practices": ["Scrum", "Monitoring/Alerting", "CI/CD"],
+    "tools": ["Stripe", "VSCode Extensions"]
+  },
+  "experience": [
+    {
+      "company": "DeVilliers Technology Solutions",
+      "location": "Boston, MA",
+      "roles": [
+        {
+          "title": "Mid-Level Lead Software Developer",
+          "start": "2022-10",
+          "end": "2025-08",
+          "bullets": [
+            "Designed segmented thread pools (short vs. long-running) with dynamic scaling, eliminating UI freezes from contention and improving responsiveness by 10x",
+            "Implemented a JavaFX two-way file transfer feature (FDT protocol) with error checking, retries, and confirmations, reducing failed transfers and manual recovery",
+            "Re-architected the message backend with priority queues and optimized threading using inheritance/polymorphism patterns, reducing new protocol onboarding time from weeks to hours"
+          ],
+          "tech": ["Java", "JavaFX", "FDT Protocol", "Threading", "Priority Queues"]
+        },
+        {
+          "title": "Part-Time Junior Software Developer",
+          "start": "2021-07",
+          "end": "2022-01",
+          "bullets": [
+            "Rewrote a JavaFX app that became the primary simulation testing tool, streamlining test runs and reducing manual steps"
+          ],
+          "tech": ["Java", "JavaFX", "Simulation Testing"]
+        }
+      ]
+    },
+    {
+      "company": "Criteo",
+      "location": "Boston, MA",
+      "roles": [
+        {
+          "title": "Software Development Engineer",
+          "start": "2022-01",
+          "end": "2022-10",
+          "bullets": [
+            "Enhanced analytics dashboards by deploying Spark clusters and integrating Hive/Vertica, improving data processing speed and dashboard responsiveness"
+          ],
+          "tech": ["Spark", "Hive", "Vertica", "Analytics Dashboards"]
+        },
+        {
+          "title": "Part-Time Software Development Intern",
+          "start": "2021-07",
+          "end": "2022-01",
+          "bullets": [
+            "Contributed to a gamified ad-experience browser extension (Angular, ASP.NET), improving delivery timelines and boosting user engagement"
+          ],
+          "tech": ["Angular", "ASP.NET", "Browser Extensions"]
+        }
+      ]
+    },
+    {
+      "company": "WHOOP",
+      "location": "Boston, MA",
+      "roles": [
+        {
+          "title": "Co-op Web Developer",
+          "start": "2020-01",
+          "end": "2020-08",
+          "bullets": [
+            "Built internal apps: (1) membership services portal with Stripe integration to cut manual operations; (2) dashboard/tools for signal processing & field testing to improve data accessibility",
+            "Implemented AWS monitoring/alerting for key metrics, increasing uptime and detecting multiple intrusion attempts"
+          ],
+          "tech": ["Stripe", "AWS", "Monitoring/Alerting", "Signal Processing"]
+        }
+      ]
+    },
+    {
+      "company": "MEDITECH",
+      "location": "Boston, MA",
+      "roles": [
+        {
+          "title": "Co-op Programmer",
+          "start": "2019-01",
+          "end": "2019-08",
+          "bullets": [
+            "Built a VSCode extension for React Native components, streamlining integration and reducing boilerplate code for the development team"
+          ],
+          "tech": ["VSCode Extensions", "React Native"]
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "JavaFX Thread Pool Optimizer",
+      "summary": "Designed and implemented segmented thread pools with dynamic scaling to eliminate UI freezes and improve application responsiveness by 10x",
+      "impact": ["Improved UI responsiveness by 10x", "Eliminated UI freezes from thread contention"],
+      "tech": ["Java", "JavaFX", "Threading", "Performance Optimization"],
+      "links": {},
+      "images": [],
+      "slug": "javafx-thread-pool-optimizer",
+      "role": "Lead Developer",
+      "dates": "2022-2025"
+    },
+    {
+      "name": "FDT File Transfer System",
+      "summary": "Implemented a robust two-way file transfer feature with error checking, retries, and confirmations to reduce failed transfers and manual recovery",
+      "impact": ["Reduced failed file transfers", "Eliminated manual recovery processes"],
+      "tech": ["Java", "JavaFX", "FDT Protocol", "Error Handling"],
+      "links": {},
+      "images": [],
+      "slug": "fdt-file-transfer-system",
+      "role": "Lead Developer",
+      "dates": "2022-2025"
+    },
+    {
+      "name": "Message Backend Architecture",
+      "summary": "Re-architected message backend with priority queues and optimized threading patterns, reducing new protocol onboarding time from weeks to hours",
+      "impact": ["Reduced protocol onboarding from weeks to hours", "Improved system scalability"],
+      "tech": ["Java", "Priority Queues", "Inheritance/Polymorphism", "System Architecture"],
+      "links": {},
+      "images": [],
+      "slug": "message-backend-architecture",
+      "role": "Lead Developer",
+      "dates": "2022-2025"
+    },
+    {
+      "name": "WHOOP Membership Portal",
+      "summary": "Built internal membership services portal with Stripe integration to automate manual operations and improve operational efficiency",
+      "impact": ["Cut manual operations", "Improved operational efficiency"],
+      "tech": ["Stripe", "Web Development", "Internal Tools"],
+      "links": {},
+      "images": [],
+      "slug": "whoop-membership-portal",
+      "role": "Co-op Developer",
+      "dates": "2020"
+    },
+    {
+      "name": "Signal Processing Dashboard",
+      "summary": "Developed dashboard and tools for signal processing and field testing to improve data accessibility and analysis capabilities",
+      "impact": ["Improved data accessibility", "Enhanced analysis capabilities"],
+      "tech": ["Signal Processing", "Dashboard Development", "Data Analysis"],
+      "links": {},
+      "images": [],
+      "slug": "signal-processing-dashboard",
+      "role": "Co-op Developer",
+      "dates": "2020"
+    },
+    {
+      "name": "React Native VSCode Extension",
+      "summary": "Built a VSCode extension for React Native components to streamline integration and reduce boilerplate code for the development team",
+      "impact": ["Streamlined component integration", "Reduced boilerplate code"],
+      "tech": ["VSCode Extensions", "React Native", "Developer Tools"],
+      "links": {},
+      "images": [],
+      "slug": "react-native-vscode-extension",
+      "role": "Co-op Programmer",
+      "dates": "2019"
+    }
+  ],
+  "education": [
+    {
+      "school": "Northeastern University",
+      "degree": "Bachelor of Science, Computer Engineering",
+      "minor": "Entrepreneurial Engineering",
+      "year": "2021",
+      "start": "2017-08",
+      "end": "2021-12"
+    }
+  ],
+  "certifications": [],
+  "awards": [],
+  "interests": [
+    "Music Production",
+    "Mead Brewing",
+    "Sourdough",
+    "Apartment Gardening",
+    "Real Estate",
+    "Anime"
+  ]
+}
