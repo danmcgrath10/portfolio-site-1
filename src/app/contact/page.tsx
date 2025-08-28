@@ -29,21 +29,34 @@ export default function ContactPage() {
     formState: { errors },
   } = useForm<ContactForm>({
     resolver: zodResolver(contactSchema),
+    mode: "onChange", // Enable validation on change for better UX
   })
+
+
 
   const onSubmit = async (formData: ContactForm) => {
     setIsSubmitting(true)
     setSubmitStatus("idle")
 
     try {
-      // For now, we'll just simulate a successful submission
-      // In a real implementation, you'd send this to your API
-      console.log("Form data:", formData) // Use the parameter to avoid warning
-      await new Promise((resolve) => setTimeout(resolve, 1000))
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const result = await response.json()
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to send message')
+      }
       
       setSubmitStatus("success")
       reset()
-    } catch {
+    } catch (error) {
+      console.error('Contact form error:', error)
       setSubmitStatus("error")
     } finally {
       setIsSubmitting(false)
@@ -63,11 +76,11 @@ export default function ContactPage() {
 
       <div className="grid gap-12 lg:grid-cols-2">
         {/* Contact Form */}
-        <Card className="star-wars-card group hover:scale-[1.01] transition-transform duration-300">
+        <Card className="star-wars-card group hover:scale-[1.01] transition-transform duration-300" style={{ position: 'relative', zIndex: 1 }}>
           <CardHeader className="pb-6">
             <CardTitle className="text-2xl star-wars-text star-wars-glow">Send a Message</CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent style={{ position: 'relative', zIndex: 2 }}>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-8 star-wars-form">
               <div className="space-y-2">
                 <label htmlFor="name" className="block text-sm font-medium text-cyan-400 uppercase tracking-wider">
@@ -77,8 +90,11 @@ export default function ContactPage() {
                   {...register("name")}
                   type="text"
                   id="name"
-                  className="w-full rounded-md border border-input bg-background px-4 py-3 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 transition-all duration-200 focus:border-cyan-400"
+                  autoComplete="name"
+
+                  className="w-full rounded-md border border-cyan-400 bg-black/80 px-4 py-3 text-base text-white placeholder:text-cyan-400/60 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-50"
                   placeholder="Your name"
+                  style={{ pointerEvents: 'auto', zIndex: 10 }}
                 />
                 {errors.name && (
                   <p className="mt-2 text-sm text-red-400">{errors.name.message}</p>
@@ -93,8 +109,11 @@ export default function ContactPage() {
                   {...register("email")}
                   type="email"
                   id="email"
-                  className="w-full rounded-md border border-input bg-background px-4 py-3 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 transition-all duration-200 focus:border-cyan-400"
+                  autoComplete="email"
+
+                  className="w-full rounded-md border border-cyan-400 bg-black/80 px-4 py-3 text-base text-white placeholder:text-cyan-400/60 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-50"
                   placeholder="your.email@example.com"
+                  style={{ pointerEvents: 'auto', zIndex: 10 }}
                 />
                 {errors.email && (
                   <p className="mt-2 text-sm text-red-400">{errors.email.message}</p>
@@ -109,8 +128,10 @@ export default function ContactPage() {
                   {...register("message")}
                   id="message"
                   rows={6}
-                  className="w-full rounded-md border border-input bg-background px-4 py-3 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 transition-all duration-200 focus:border-cyan-400 resize-none"
+
+                  className="w-full rounded-md border border-cyan-400 bg-black/80 px-4 py-3 text-base text-white placeholder:text-cyan-400/60 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-200 resize-none disabled:cursor-not-allowed disabled:opacity-50"
                   placeholder="Tell me about your project or opportunity..."
+                  style={{ pointerEvents: 'auto', zIndex: 10 }}
                 />
                 {errors.message && (
                   <p className="mt-2 text-sm text-red-400">{errors.message.message}</p>
