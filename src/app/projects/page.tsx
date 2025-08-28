@@ -33,8 +33,8 @@ export default function ProjectsPage() {
     <div className="container mx-auto px-4 py-8">
       {/* Header */}
       <div className="mb-12 text-center">
-        <h1 className="mb-4 text-4xl font-bold">Projects</h1>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+        <h1 className="mb-4 text-4xl font-bold star-wars-title">Projects</h1>
+        <p className="text-lg text-gray-300 max-w-2xl mx-auto">
           A collection of my work showcasing expertise in performance optimization, 
           developer productivity, and full-stack development.
         </p>
@@ -48,12 +48,12 @@ export default function ProjectsPage() {
             placeholder="Search projects..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="flex-1 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            className="flex-1 star-wars-form rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
           />
           <select
             value={selectedTech}
             onChange={(e) => setSelectedTech(e.target.value)}
-            className="rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            className="star-wars-form rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
           >
             <option value="">All Technologies</option>
             {uniqueTech.map((tech) => (
@@ -65,15 +65,15 @@ export default function ProjectsPage() {
         </div>
         
         {(searchTerm || selectedTech) && (
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          <div className="flex items-center gap-2 text-sm text-gray-300">
             <span>Filtered by:</span>
             {searchTerm && (
-              <Badge variant="secondary" className="text-xs">
+              <Badge className="star-wars-badge text-xs">
                 &quot;{searchTerm}&quot;
               </Badge>
             )}
             {selectedTech && (
-              <Badge variant="secondary" className="text-xs">
+              <Badge className="star-wars-badge text-xs">
                 {selectedTech}
               </Badge>
             )}
@@ -84,7 +84,7 @@ export default function ProjectsPage() {
                 setSearchTerm("")
                 setSelectedTech("")
               }}
-              className="h-auto p-1 text-xs"
+              className="h-auto p-1 text-xs star-wars-button"
             >
               Clear
             </Button>
@@ -95,15 +95,15 @@ export default function ProjectsPage() {
       {/* Projects Grid */}
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {filteredProjects.map((project) => (
-          <Card key={project.slug} className="group hover:shadow-lg transition-all duration-200 hover:-translate-y-1">
+          <Card key={project.slug} className="star-wars-card group hover:shadow-lg transition-all duration-200 hover:-translate-y-1 star-wars-space">
             <CardHeader>
               <div className="flex items-start justify-between">
-                <CardTitle className="group-hover:text-primary transition-colors line-clamp-2">
+                <CardTitle className="group-hover:text-cyan-400 transition-colors line-clamp-2 star-wars-text">
                   {project.name}
                 </CardTitle>
                 <div className="flex space-x-1">
                   {project.links.github && (
-                    <Button variant="ghost" size="icon" asChild className="h-8 w-8">
+                    <Button variant="ghost" size="icon" asChild className="h-8 w-8 star-wars-button">
                       <a href={project.links.github} target="_blank" rel="noreferrer">
                         <Github className="h-4 w-4" />
                         <span className="sr-only">GitHub</span>
@@ -111,7 +111,7 @@ export default function ProjectsPage() {
                     </Button>
                   )}
                   {project.links.demo && (
-                    <Button variant="ghost" size="icon" asChild className="h-8 w-8">
+                    <Button variant="ghost" size="icon" asChild className="h-8 w-8 star-wars-button">
                       <a href={project.links.demo} target="_blank" rel="noreferrer">
                         <ExternalLink className="h-4 w-4" />
                         <span className="sr-only">Demo</span>
@@ -120,18 +120,18 @@ export default function ProjectsPage() {
                   )}
                 </div>
               </div>
-              <CardDescription className="line-clamp-3">
+              <CardDescription className="line-clamp-3 text-gray-300">
                 {project.summary}
               </CardDescription>
             </CardHeader>
             <CardContent>
               <div className="mb-4">
-                <div className="mb-2 text-xs font-medium text-muted-foreground">
+                <div className="mb-2 text-xs font-medium text-cyan-400 uppercase tracking-wider">
                   Technologies
                 </div>
                 <div className="flex flex-wrap gap-1">
                   {project.tech.map((tech) => (
-                    <Badge key={tech} variant="outline" className="text-xs">
+                    <Badge key={tech} className="star-wars-badge text-xs">
                       {tech}
                     </Badge>
                   ))}
@@ -139,24 +139,24 @@ export default function ProjectsPage() {
               </div>
               
               <div className="mb-4">
-                <div className="mb-2 text-xs font-medium text-muted-foreground">
+                <div className="mb-2 text-xs font-medium text-cyan-400 uppercase tracking-wider">
                   Impact
                 </div>
                 <div className="space-y-1">
                   {project.impact.map((impact, index) => (
-                    <p key={index} className="text-sm text-muted-foreground">
+                    <p key={index} className="text-sm text-gray-300">
                       • {impact}
                     </p>
                   ))}
                 </div>
               </div>
               
-              <div className="flex items-center justify-between text-xs text-muted-foreground">
+              <div className="flex items-center justify-between text-xs text-gray-400">
                 <span>{project.role}</span>
                 <span>{project.dates}</span>
               </div>
               
-              <Button variant="ghost" size="sm" className="mt-4 w-full" asChild>
+              <Button variant="ghost" size="sm" className="mt-4 w-full star-wars-button" asChild>
                 <Link href={`/projects/${project.slug}`}>
                   View Details
                   <ArrowRight className="ml-2 h-3 w-3" />
@@ -170,7 +170,7 @@ export default function ProjectsPage() {
       {/* No Results */}
       {filteredProjects.length === 0 && (
         <div className="text-center py-12">
-          <p className="text-lg text-muted-foreground mb-4">
+          <p className="text-lg text-gray-300 mb-4">
             No projects found matching your criteria.
           </p>
           <Button
@@ -179,6 +179,7 @@ export default function ProjectsPage() {
               setSearchTerm("")
               setSelectedTech("")
             }}
+            className="star-wars-button"
           >
             Clear Filters
           </Button>
@@ -187,7 +188,7 @@ export default function ProjectsPage() {
 
       {/* Results Count */}
       {filteredProjects.length > 0 && (
-        <div className="mt-8 text-center text-sm text-muted-foreground">
+        <div className="mt-8 text-center text-sm text-gray-400">
           Showing {filteredProjects.length} of {resume.projects.length} projects
         </div>
       )}

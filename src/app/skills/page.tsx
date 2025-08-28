@@ -39,9 +39,9 @@ export default function SkillsPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       {/* Header */}
-      <div className="mb-12 text-center">
-        <h1 className="mb-4 text-4xl font-bold">Skills & Technologies</h1>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+      <div className="mb-16 text-center">
+        <h1 className="mb-6 text-5xl font-bold star-wars-title star-wars-glow">Skills & Technologies</h1>
+        <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
           A comprehensive overview of my technical skills and expertise across 
           different domains of software development.
         </p>
@@ -50,17 +50,19 @@ export default function SkillsPage() {
       {/* Skills Grid */}
       <div className="grid gap-8 md:grid-cols-2">
         {skillCategories.map((category) => (
-          <Card key={category.name} className="h-fit">
-            <CardHeader>
-              <CardTitle className="text-xl">{category.name}</CardTitle>
-              <p className="text-sm text-muted-foreground">
+          <Card key={category.name} className="star-wars-card h-fit star-wars-space group hover:scale-[1.02] transition-transform duration-300">
+            <CardHeader className="pb-4">
+              <CardTitle className="text-2xl star-wars-text group-hover:text-cyan-400 transition-colors">
+                {category.name}
+              </CardTitle>
+              <p className="text-sm text-gray-300 leading-relaxed">
                 {category.description}
               </p>
             </CardHeader>
             <CardContent>
               <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill) => (
-                  <Badge key={skill} variant="secondary" className="text-sm">
+                  <Badge key={skill} className="star-wars-badge text-sm hover:scale-105 transition-transform">
                     {skill}
                   </Badge>
                 ))}
@@ -71,36 +73,36 @@ export default function SkillsPage() {
       </div>
 
       {/* Skills Summary */}
-      <div className="mt-16">
-        <Card>
-          <CardHeader>
-            <CardTitle>Skills Overview</CardTitle>
+      <div className="mt-20">
+        <Card className="star-wars-card">
+          <CardHeader className="text-center pb-6">
+            <CardTitle className="text-2xl star-wars-text star-wars-glow">Skills Overview</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-              <div className="text-center">
-                <div className="mb-2 text-3xl font-bold text-primary">
+            <div className="star-wars-stats">
+              <div className="star-wars-stat">
+                <div className="star-wars-stat-number">
                   {resume.skills.languages.length}
                 </div>
-                <div className="text-muted-foreground">Languages</div>
+                <div className="star-wars-stat-label">Languages</div>
               </div>
-              <div className="text-center">
-                <div className="mb-2 text-3xl font-bold text-primary">
+              <div className="star-wars-stat">
+                <div className="star-wars-stat-number">
                   {resume.skills.frameworks.length}
                 </div>
-                <div className="text-muted-foreground">Frameworks</div>
+                <div className="star-wars-stat-label">Frameworks</div>
               </div>
-              <div className="text-center">
-                <div className="mb-2 text-3xl font-bold text-primary">
+              <div className="star-wars-stat">
+                <div className="star-wars-stat-number">
                   {resume.skills.cloud.length}
                 </div>
-                <div className="text-muted-foreground">Cloud Tools</div>
+                <div className="star-wars-stat-label">Cloud Tools</div>
               </div>
-              <div className="text-center">
-                <div className="mb-2 text-3xl font-bold text-primary">
+              <div className="star-wars-stat">
+                <div className="star-wars-stat-number">
                   {resume.skills.data.length}
                 </div>
-                <div className="text-muted-foreground">Data Tools</div>
+                <div className="star-wars-stat-label">Data Tools</div>
               </div>
             </div>
           </CardContent>
@@ -108,37 +110,37 @@ export default function SkillsPage() {
       </div>
 
       {/* Key Strengths */}
-      <div className="mt-16">
-        <Card>
-          <CardHeader>
-            <CardTitle>Key Strengths</CardTitle>
+      <div className="mt-20">
+        <Card className="star-wars-card">
+          <CardHeader className="text-center pb-6">
+            <CardTitle className="text-2xl star-wars-text star-wars-glow">Key Strengths</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid gap-6 md:grid-cols-2">
-              <div className="space-y-4">
-                <h3 className="text-lg font-semibold">Performance Optimization</h3>
-                <p className="text-muted-foreground">
+            <div className="grid gap-8 md:grid-cols-2">
+              <div className="space-y-4 group">
+                <h3 className="text-xl font-semibold star-wars-text group-hover:text-cyan-400 transition-colors">Performance Optimization</h3>
+                <p className="text-gray-300 leading-relaxed">
                   Expertise in improving application performance through thread pool optimization, 
                   concurrency management, and system architecture improvements.
                 </p>
               </div>
-              <div className="space-y-4">
-                <h3 className="text-lg font-semibold">Developer Productivity</h3>
-                <p className="text-muted-foreground">
+              <div className="space-y-4 group">
+                <h3 className="text-xl font-semibold star-wars-text group-hover:text-cyan-400 transition-colors">Developer Productivity</h3>
+                <p className="text-gray-300 leading-relaxed">
                   Building internal tools and systems that streamline development workflows 
                   and reduce cycle time for teams.
                 </p>
               </div>
-              <div className="space-y-4">
-                <h3 className="text-lg font-semibold">Full-Stack Development</h3>
-                <p className="text-muted-foreground">
+              <div className="space-y-4 group">
+                <h3 className="text-xl font-semibold star-wars-text group-hover:text-cyan-400 transition-colors">Full-Stack Development</h3>
+                <p className="text-gray-300 leading-relaxed">
                   Experience across the entire stack from frontend frameworks to backend 
                   systems and cloud infrastructure.
                 </p>
               </div>
-              <div className="space-y-4">
-                <h3 className="text-lg font-semibold">System Architecture</h3>
-                <p className="text-muted-foreground">
+              <div className="space-y-4 group">
+                <h3 className="text-xl font-semibold star-wars-text group-hover:text-cyan-400 transition-colors">System Architecture</h3>
+                <p className="text-gray-300 leading-relaxed">
                   Designing scalable systems with proper error handling, monitoring, 
                   and maintainable code patterns.
                 </p>

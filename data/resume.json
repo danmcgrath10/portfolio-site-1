@@ -3,7 +3,7 @@
     "name": "Daniel E. McGrath",
     "headline": "Full-Stack / Backend Software Engineer • Performance & Developer Productivity",
     "location": "Malden, MA",
-    "summary": "Full-stack / backend software engineer with 5+ years across Java/JavaFX/Web apps, data platforms, and AWS. Known for improving concurrency, scaling messaging systems, and shipping internal tools that cut cycle time. Recently impacted by company-wide restructuring and now seeking backend/infra roles where performance and developer productivity matter.",
+    "summary": "Full-stack / backend software engineer with 5+ years across Java/JavaFX/Web apps, data platforms, and AWS. Known for improving concurrency, scaling messaging systems, and shipping internal tools that cut cycle time. Recently impacted by company-wide restructuring and now seeking backend/infra/full stack roles where performance and developer productivity matter.",
     "links": {
       "email": "danmcgrath1035@gmail.com",
       "phone": "+1 (603) 548-1168"
@@ -11,11 +11,11 @@
   },
   "skills": {
     "languages": ["Java", "JavaScript", "Python", "SQL", "Scala"],
-    "frameworks": ["JavaFX", "Next.js", "Angular", "ASP.NET", "React Native"],
+    "frameworks": ["JavaFX", "Next.js", "React", "React Native"],
     "cloud": ["AWS", "Docker"],
-    "data": ["Spark", "Hive", "Vertica", "Database Design"],
+    "data": ["Spark", "Hive", "Vertica", "Perst"],
     "practices": ["Scrum", "Monitoring/Alerting", "CI/CD"],
-    "tools": ["Stripe", "VSCode Extensions"]
+    "tools": ["Cursor AI", "WebStorm"]
   },
   "experience": [
     {
@@ -31,7 +31,7 @@
             "Implemented a JavaFX two-way file transfer feature (FDT protocol) with error checking, retries, and confirmations, reducing failed transfers and manual recovery",
             "Re-architected the message backend with priority queues and optimized threading using inheritance/polymorphism patterns, reducing new protocol onboarding time from weeks to hours"
           ],
-          "tech": ["Java", "JavaFX", "FDT Protocol", "Threading", "Priority Queues"]
+          "tech": ["Java", "JavaFX", "Multithreading", "Concurrency", "Geospatial", "P2P"]
         },
         {
           "title": "Part-Time Junior Software Developer",
@@ -55,7 +55,7 @@
           "bullets": [
             "Enhanced analytics dashboards by deploying Spark clusters and integrating Hive/Vertica, improving data processing speed and dashboard responsiveness"
           ],
-          "tech": ["Spark", "Hive", "Vertica", "Analytics Dashboards"]
+          "tech": ["Spark", "Hive", "Vertica", "Scala"]
         },
         {
           "title": "Part-Time Software Development Intern",
@@ -80,7 +80,7 @@
             "Built internal apps: (1) membership services portal with Stripe integration to cut manual operations; (2) dashboard/tools for signal processing & field testing to improve data accessibility",
             "Implemented AWS monitoring/alerting for key metrics, increasing uptime and detecting multiple intrusion attempts"
           ],
-          "tech": ["Stripe", "AWS", "Monitoring/Alerting", "Signal Processing"]
+          "tech": ["Stripe", "AWS", "Monitoring/Alerting", "Signal Processing", "React"]
         }
       ]
     },

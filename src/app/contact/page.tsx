@@ -53,89 +53,89 @@ export default function ContactPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       {/* Header */}
-      <div className="mb-12 text-center">
-        <h1 className="mb-4 text-4xl font-bold">Get In Touch</h1>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+      <div className="mb-16 text-center">
+        <h1 className="mb-6 text-5xl font-bold star-wars-title star-wars-glow">Get In Touch</h1>
+        <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
           I&apos;m always interested in hearing about new opportunities and interesting projects. 
           Feel free to reach out if you&apos;d like to connect!
         </p>
       </div>
 
-      <div className="grid gap-8 lg:grid-cols-2">
+      <div className="grid gap-12 lg:grid-cols-2">
         {/* Contact Form */}
-        <Card>
-          <CardHeader>
-            <CardTitle>Send a Message</CardTitle>
+        <Card className="star-wars-card group hover:scale-[1.01] transition-transform duration-300">
+          <CardHeader className="pb-6">
+            <CardTitle className="text-2xl star-wars-text star-wars-glow">Send a Message</CardTitle>
           </CardHeader>
           <CardContent>
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-8 star-wars-form">
+              <div className="space-y-2">
+                <label htmlFor="name" className="block text-sm font-medium text-cyan-400 uppercase tracking-wider">
                   Name
                 </label>
                 <input
                   {...register("name")}
                   type="text"
                   id="name"
-                  className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  className="w-full rounded-md border border-input bg-background px-4 py-3 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 transition-all duration-200 focus:border-cyan-400"
                   placeholder="Your name"
                 />
                 {errors.name && (
-                  <p className="mt-1 text-sm text-destructive">{errors.name.message}</p>
+                  <p className="mt-2 text-sm text-red-400">{errors.name.message}</p>
                 )}
               </div>
 
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">
+              <div className="space-y-2">
+                <label htmlFor="email" className="block text-sm font-medium text-cyan-400 uppercase tracking-wider">
                   Email
                 </label>
                 <input
                   {...register("email")}
                   type="email"
                   id="email"
-                  className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  className="w-full rounded-md border border-input bg-background px-4 py-3 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 transition-all duration-200 focus:border-cyan-400"
                   placeholder="your.email@example.com"
                 />
                 {errors.email && (
-                  <p className="mt-1 text-sm text-destructive">{errors.email.message}</p>
+                  <p className="mt-2 text-sm text-red-400">{errors.email.message}</p>
                 )}
               </div>
 
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">
+              <div className="space-y-2">
+                <label htmlFor="message" className="block text-sm font-medium text-cyan-400 uppercase tracking-wider">
                   Message
                 </label>
                 <textarea
                   {...register("message")}
                   id="message"
-                  rows={5}
-                  className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  rows={6}
+                  className="w-full rounded-md border border-input bg-background px-4 py-3 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 transition-all duration-200 focus:border-cyan-400 resize-none"
                   placeholder="Tell me about your project or opportunity..."
                 />
                 {errors.message && (
-                  <p className="mt-1 text-sm text-destructive">{errors.message.message}</p>
+                  <p className="mt-2 text-sm text-red-400">{errors.message.message}</p>
                 )}
               </div>
 
-              <Button type="submit" disabled={isSubmitting} className="w-full">
+              <Button type="submit" disabled={isSubmitting} className="w-full star-wars-button text-lg py-3">
                 {isSubmitting ? (
                   "Sending..."
                 ) : (
                   <>
-                    <Send className="mr-2 h-4 w-4" />
+                    <Send className="mr-3 h-5 w-5" />
                     Send Message
                   </>
                 )}
               </Button>
 
               {submitStatus === "success" && (
-                <p className="text-sm text-green-600 text-center">
+                <p className="text-sm text-green-400 text-center bg-green-400/10 p-4 rounded-md">
                   Thank you! Your message has been sent successfully.
                 </p>
               )}
 
               {submitStatus === "error" && (
-                <p className="text-sm text-destructive text-center">
+                <p className="text-sm text-red-400 text-center bg-red-400/10 p-4 rounded-md">
                   Sorry, there was an error sending your message. Please try again.
                 </p>
               )}
@@ -144,70 +144,70 @@ export default function ContactPage() {
         </Card>
 
         {/* Contact Information */}
-        <div className="space-y-6">
-          <Card>
-            <CardHeader>
-              <CardTitle>Contact Information</CardTitle>
+        <div className="space-y-8">
+          <Card className="star-wars-card group hover:scale-[1.01] transition-transform duration-300">
+            <CardHeader className="pb-4">
+              <CardTitle className="text-xl star-wars-text star-wars-glow">Contact Information</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="flex items-center gap-3">
-                <Mail className="h-5 w-5 text-muted-foreground" />
-                <div>
-                  <div className="font-medium">Email</div>
+            <CardContent className="space-y-6">
+              <div className="flex items-center gap-4">
+                <Mail className="h-6 w-6 text-cyan-400" />
+                <div className="space-y-1">
+                  <div className="font-medium text-cyan-400 uppercase tracking-wider text-sm">Email</div>
                   <a
                     href={`mailto:${resume.profile.links.email}`}
-                    className="text-primary hover:underline"
+                    className="text-gray-300 hover:text-cyan-400 transition-colors text-lg"
                   >
                     {resume.profile.links.email}
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-muted-foreground" />
-                <div>
-                  <div className="font-medium">Phone</div>
+              <div className="flex items-center gap-4">
+                <Phone className="h-6 w-6 text-cyan-400" />
+                <div className="space-y-1">
+                  <div className="font-medium text-cyan-400 uppercase tracking-wider text-sm">Phone</div>
                   <a
                     href={`tel:${resume.profile.links.phone}`}
-                    className="text-primary hover:underline"
+                    className="text-gray-300 hover:text-cyan-400 transition-colors text-lg"
                   >
                     {resume.profile.links.phone}
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3">
-                <MapPin className="h-5 w-5 text-muted-foreground" />
-                <div>
-                  <div className="font-medium">Location</div>
-                  <div className="text-muted-foreground">{resume.profile.location}</div>
+              <div className="flex items-center gap-4">
+                <MapPin className="h-6 w-6 text-cyan-400" />
+                <div className="space-y-1">
+                  <div className="font-medium text-cyan-400 uppercase tracking-wider text-sm">Location</div>
+                  <div className="text-gray-300 text-lg">{resume.profile.location}</div>
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>What I&apos;m Looking For</CardTitle>
+          <Card className="star-wars-card group hover:scale-[1.01] transition-transform duration-300">
+            <CardHeader className="pb-4">
+              <CardTitle className="text-xl star-wars-text star-wars-glow">What I&apos;m Looking For</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4">
-              <div>
-                <h3 className="font-medium mb-2">Backend & Infrastructure Roles</h3>
-                <p className="text-sm text-muted-foreground">
+            <CardContent className="space-y-6">
+              <div className="space-y-3">
+                <h3 className="font-medium text-cyan-400 uppercase tracking-wider">Backend & Infrastructure Roles</h3>
+                <p className="text-gray-300 leading-relaxed">
                   I&apos;m particularly interested in roles focused on performance optimization, 
                   system architecture, and developer productivity tools.
                 </p>
               </div>
-              <div>
-                <h3 className="font-medium mb-2">Full-Stack Opportunities</h3>
-                <p className="text-sm text-muted-foreground">
+              <div className="space-y-3">
+                <h3 className="font-medium text-cyan-400 uppercase tracking-wider">Full-Stack Opportunities</h3>
+                <p className="text-gray-300 leading-relaxed">
                   Open to full-stack positions where I can leverage my experience across 
                   the entire development stack.
                 </p>
               </div>
-              <div>
-                <h3 className="font-medium mb-2">Remote & Hybrid</h3>
-                <p className="text-sm text-muted-foreground">
+              <div className="space-y-3">
+                <h3 className="font-medium text-cyan-400 uppercase tracking-wider">Remote & Hybrid</h3>
+                <p className="text-gray-300 leading-relaxed">
                   Prefer remote or hybrid work arrangements, with occasional travel for 
                   team meetings and collaboration.
                 </p>
@@ -215,12 +215,12 @@ export default function ContactPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Response Time</CardTitle>
+          <Card className="star-wars-card group hover:scale-[1.01] transition-transform duration-300">
+            <CardHeader className="pb-4">
+              <CardTitle className="text-xl star-wars-text star-wars-glow">Response Time</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-gray-300 leading-relaxed">
                 I typically respond to messages within 24 hours during business days. 
                 For urgent matters, feel free to reach out via phone.
               </p>
