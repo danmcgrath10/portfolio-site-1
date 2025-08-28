@@ -85,7 +85,8 @@ export default function ContactPage() {
       </div>
 
       <div className="grid gap-12 lg:grid-cols-2">
-        {/* Contact Form */}
+        {/* Contact Form - COMMENTED OUT FOR NOW */}
+        {/*
         <div className="simple-form-container" style={{ 
           background: 'rgba(0, 0, 0, 0.9)', 
           border: '1px solid #00d4ff', 
@@ -98,7 +99,6 @@ export default function ContactPage() {
         }}>
           <h3 className="text-2xl star-wars-text star-wars-glow mb-6">Send a Message</h3>
           
-          {/* Chrome Debug Test - Simple Vanilla Input */}
           <div style={{ marginBottom: '20px', padding: '10px', background: 'rgba(255, 0, 0, 0.1)', border: '1px solid red' }}>
             <p style={{ color: 'red', fontSize: '12px', marginBottom: '10px' }}>
               🔧 DEBUG: If you can click and type in this red test input, the issue is with React Hook Form:
@@ -247,6 +247,7 @@ export default function ContactPage() {
             </form>
           </div>
         </div>
+        */}
 
         {/* Contact Information */}
         <div className="space-y-8">
