@@ -150,6 +150,97 @@
   cursor: pointer;
 }
 
+/* AGGRESSIVE DEBUG STYLES - Force form inputs to be clickable */
+.debug-input {
+  pointer-events: auto !important;
+  z-index: 9999 !important;
+  position: relative !important;
+  cursor: text !important;
+  touch-action: manipulation !important;
+  user-select: text !important;
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+}
+
+.debug-input:focus {
+  outline: 2px solid #00d4ff !important;
+  outline-offset: 2px !important;
+  border-color: #00d4ff !important;
+}
+
+.simple-form-container {
+  pointer-events: auto !important;
+  position: relative !important;
+  z-index: 1000 !important;
+  isolation: isolate !important;
+}
+
+.simple-form-container * {
+  pointer-events: auto !important;
+}
+
+/* Override any global styles that might interfere */
+input.debug-input,
+textarea.debug-input {
+  all: unset !important;
+  width: 100% !important;
+  padding: 12px !important;
+  border: 2px solid #00d4ff !important;
+  border-radius: 6px !important;
+  background: #000 !important;
+  color: #fff !important;
+  font-size: 16px !important;
+  font-family: inherit !important;
+  pointer-events: auto !important;
+  z-index: 9999 !important;
+  position: relative !important;
+  cursor: text !important;
+  touch-action: manipulation !important;
+  box-sizing: border-box !important;
+  display: block !important;
+  
+  /* Chrome-specific fixes */
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+  -webkit-user-select: text !important;
+  -webkit-touch-callout: default !important;
+  -webkit-tap-highlight-color: rgba(0, 212, 255, 0.3) !important;
+  outline: none !important;
+  border-style: solid !important;
+  border-width: 2px !important;
+}
+
+/* Chrome-specific hover and focus states */
+input.debug-input:hover,
+textarea.debug-input:hover {
+  border-color: #ff6b35 !important;
+  cursor: text !important;
+}
+
+input.debug-input:focus,
+textarea.debug-input:focus {
+  border-color: #00d4ff !important;
+  outline: 2px solid #00d4ff !important;
+  outline-offset: 2px !important;
+  cursor: text !important;
+}
+
+/* Force Chrome to recognize these as interactive elements */
+input.debug-input::-webkit-input-placeholder,
+textarea.debug-input::-webkit-input-placeholder {
+  color: rgba(0, 212, 255, 0.6) !important;
+}
+
+/* Ensure Chrome doesn't apply any default form styles */
+.simple-form-container input,
+.simple-form-container textarea {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+
 .star-wars-button {
   background: linear-gradient(45deg, #00d4ff, #ff6b35);
   border: none;

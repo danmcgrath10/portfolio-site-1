@@ -32,6 +32,16 @@ export default function ContactPage() {
     mode: "onChange", // Enable validation on change for better UX
   })
 
+  // Debug: Check if register is working
+  console.log('React Hook Form register:', register)
+  console.log('Form errors:', errors)
+
+  // Chrome-specific debugging
+  const handleInputTest = (fieldName: string) => {
+    console.log(`Direct click on ${fieldName} input detected!`)
+    alert(`${fieldName} input clicked - this should work in Chrome!`)
+  }
+
 
 
   const onSubmit = async (formData: ContactForm) => {
@@ -76,11 +86,41 @@ export default function ContactPage() {
 
       <div className="grid gap-12 lg:grid-cols-2">
         {/* Contact Form */}
-        <Card className="star-wars-card contact-form-card" style={{ position: 'relative', zIndex: 1, pointerEvents: 'auto' }}>
-          <CardHeader className="pb-6">
-            <CardTitle className="text-2xl star-wars-text star-wars-glow">Send a Message</CardTitle>
-          </CardHeader>
-          <CardContent style={{ position: 'relative', zIndex: 2, pointerEvents: 'auto' }}>
+        <div className="simple-form-container" style={{ 
+          background: 'rgba(0, 0, 0, 0.9)', 
+          border: '1px solid #00d4ff', 
+          borderRadius: '8px', 
+          padding: '2rem',
+          position: 'relative',
+          zIndex: 1000,
+          pointerEvents: 'auto',
+          isolation: 'isolate'
+        }}>
+          <h3 className="text-2xl star-wars-text star-wars-glow mb-6">Send a Message</h3>
+          
+          {/* Chrome Debug Test - Simple Vanilla Input */}
+          <div style={{ marginBottom: '20px', padding: '10px', background: 'rgba(255, 0, 0, 0.1)', border: '1px solid red' }}>
+            <p style={{ color: 'red', fontSize: '12px', marginBottom: '10px' }}>
+              🔧 DEBUG: If you can click and type in this red test input, the issue is with React Hook Form:
+            </p>
+            <input 
+              type="text" 
+              placeholder="TEST INPUT - Try clicking here"
+              onClick={() => alert('Vanilla input clicked! This means Chrome can detect clicks.')}
+              style={{
+                width: '100%',
+                padding: '10px',
+                border: '2px solid red',
+                background: '#fff',
+                color: '#000',
+                fontSize: '16px',
+                zIndex: 99999,
+                position: 'relative'
+              }}
+            />
+          </div>
+
+          <div style={{ position: 'relative', zIndex: 1001, pointerEvents: 'auto' }}>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-8 star-wars-form">
               <div className="space-y-2">
                 <label htmlFor="name" className="block text-sm font-medium text-cyan-400 uppercase tracking-wider">
@@ -91,10 +131,28 @@ export default function ContactPage() {
                   type="text"
                   id="name"
                   autoComplete="name"
-
-                  className="w-full rounded-md border border-cyan-400 bg-black/80 px-4 py-3 text-base text-white placeholder:text-cyan-400/60 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-50"
+                  className="debug-input"
                   placeholder="Your name"
-                  style={{ pointerEvents: 'auto', zIndex: 10, position: 'relative' }}
+                  onClick={() => handleInputTest('name')}
+                  onFocus={() => console.log('Name input focused!')}
+                  onMouseDown={() => console.log('Name input mouse down!')}
+                  style={{ 
+                    width: '100%',
+                    padding: '12px',
+                    border: '2px solid #00d4ff',
+                    borderRadius: '6px',
+                    background: '#000',
+                    color: '#fff',
+                    fontSize: '16px',
+                    pointerEvents: 'auto',
+                    zIndex: 9999,
+                    position: 'relative',
+                    cursor: 'text',
+                    touchAction: 'manipulation',
+                    WebkitAppearance: 'none',
+                    MozAppearance: 'none',
+                    appearance: 'none'
+                  }}
                 />
                 {errors.name && (
                   <p className="mt-2 text-sm text-red-400">{errors.name.message}</p>
@@ -110,10 +168,22 @@ export default function ContactPage() {
                   type="email"
                   id="email"
                   autoComplete="email"
-
-                  className="w-full rounded-md border border-cyan-400 bg-black/80 px-4 py-3 text-base text-white placeholder:text-cyan-400/60 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-50"
+                  className="debug-input"
                   placeholder="your.email@example.com"
-                  style={{ pointerEvents: 'auto', zIndex: 10, position: 'relative' }}
+                  style={{ 
+                    width: '100%',
+                    padding: '12px',
+                    border: '2px solid #00d4ff',
+                    borderRadius: '6px',
+                    background: '#000',
+                    color: '#fff',
+                    fontSize: '16px',
+                    pointerEvents: 'auto',
+                    zIndex: 9999,
+                    position: 'relative',
+                    cursor: 'text',
+                    touchAction: 'manipulation'
+                  }}
                 />
                 {errors.email && (
                   <p className="mt-2 text-sm text-red-400">{errors.email.message}</p>
@@ -128,10 +198,24 @@ export default function ContactPage() {
                   {...register("message")}
                   id="message"
                   rows={6}
-
-                  className="w-full rounded-md border border-cyan-400 bg-black/80 px-4 py-3 text-base text-white placeholder:text-cyan-400/60 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-200 resize-none disabled:cursor-not-allowed disabled:opacity-50"
+                  className="debug-input"
                   placeholder="Tell me about your project or opportunity..."
-                  style={{ pointerEvents: 'auto', zIndex: 10, position: 'relative' }}
+                  style={{ 
+                    width: '100%',
+                    padding: '12px',
+                    border: '2px solid #00d4ff',
+                    borderRadius: '6px',
+                    background: '#000',
+                    color: '#fff',
+                    fontSize: '16px',
+                    pointerEvents: 'auto',
+                    zIndex: 9999,
+                    position: 'relative',
+                    cursor: 'text',
+                    resize: 'none',
+                    touchAction: 'manipulation',
+                    minHeight: '120px'
+                  }}
                 />
                 {errors.message && (
                   <p className="mt-2 text-sm text-red-400">{errors.message.message}</p>
@@ -161,8 +245,8 @@ export default function ContactPage() {
                 </p>
               )}
             </form>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
 
         {/* Contact Information */}
         <div className="space-y-8">
