@@ -516,7 +516,7 @@ export default function HomePage() {
 
         <div className="grid gap-8 sm:gap-12 lg:grid-cols-2">
           {/* Contact Form */}
-          <Card className="star-wars-card group hover:scale-[1.01] transition-transform duration-300">
+          <Card className="star-wars-card contact-form-card">
             <CardHeader className="pb-4 sm:pb-6">
               <CardTitle className="text-xl sm:text-2xl star-wars-text star-wars-glow">Send a Message</CardTitle>
             </CardHeader>
@@ -530,8 +530,15 @@ export default function HomePage() {
                     {...register("name")}
                     type="text"
                     id="name"
-                    className="w-full rounded-md border border-input bg-background px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 transition-all duration-200 focus:border-cyan-400"
+                    autoComplete="name"
+                    className="w-full rounded-md border-2 border-cyan-400/60 bg-black/80 px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base text-white placeholder:text-cyan-400/60 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-200"
                     placeholder="Your name"
+                    style={{ 
+                      pointerEvents: 'auto',
+                      position: 'relative',
+                      zIndex: 10,
+                      cursor: 'text'
+                    }}
                   />
                   {errors.name && (
                     <p className="mt-2 text-xs sm:text-sm text-red-400">{errors.name.message}</p>
@@ -546,8 +553,15 @@ export default function HomePage() {
                     {...register("email")}
                     type="email"
                     id="email"
-                    className="w-full rounded-md border border-input bg-background px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 transition-all duration-200 focus:border-cyan-400"
+                    autoComplete="email"
+                    className="w-full rounded-md border-2 border-cyan-400/60 bg-black/80 px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base text-white placeholder:text-cyan-400/60 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-200"
                     placeholder="your.email@example.com"
+                    style={{ 
+                      pointerEvents: 'auto',
+                      position: 'relative',
+                      zIndex: 10,
+                      cursor: 'text'
+                    }}
                   />
                   {errors.email && (
                     <p className="mt-2 text-xs sm:text-sm text-red-400">{errors.email.message}</p>
@@ -562,8 +576,15 @@ export default function HomePage() {
                     {...register("message")}
                     id="message"
                     rows={4}
-                    className="w-full rounded-md border border-input bg-background px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 transition-all duration-200 focus:border-cyan-400 resize-none"
+                    autoComplete="off"
+                    className="w-full rounded-md border-2 border-cyan-400/60 bg-black/80 px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base text-white placeholder:text-cyan-400/60 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-200 resize-none"
                     placeholder="Tell me about your project or opportunity..."
+                    style={{ 
+                      pointerEvents: 'auto',
+                      position: 'relative',
+                      zIndex: 10,
+                      cursor: 'text'
+                    }}
                   />
                   {errors.message && (
                     <p className="mt-2 text-xs sm:text-sm text-red-400">{errors.message.message}</p>
