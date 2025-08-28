@@ -569,7 +569,47 @@
   position: relative;
 }
 
-/* Responsive adjustments */
+/* Mobile-first responsive adjustments */
+@media (max-width: 640px) {
+  .star-wars-title {
+    font-size: 1.75rem;
+    letter-spacing: 1px;
+  }
+  
+  .star-wars-timeline::before {
+    left: 16px;
+  }
+  
+  .star-wars-timeline-item::before {
+    left: 16px;
+  }
+  
+  .star-wars-card {
+    border-radius: 4px;
+    margin: 0 8px;
+  }
+  
+  .star-wars-button {
+    border-radius: 4px;
+    padding: 10px 16px;
+    min-height: 44px; /* Touch target size */
+  }
+  
+  .star-wars-badge {
+    font-size: 0.625rem;
+    padding: 2px 6px;
+  }
+  
+  .star-wars-nav {
+    padding: 0 8px;
+  }
+  
+  .star-wars-nav a {
+    padding: 8px 12px;
+    font-size: 0.875rem;
+  }
+}
+
 @media (max-width: 768px) {
   .star-wars-title {
     font-size: 2rem;
@@ -591,5 +631,25 @@
   .star-wars-button {
     border-radius: 6px;
     padding: 8px 16px;
+  }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+  .star-wars-button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .star-wars-badge {
+    min-height: 32px;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .star-wars-nav a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
   }
 }
