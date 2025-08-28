@@ -117,6 +117,39 @@
   transform: translateY(-2px);
 }
 
+/* Disable card hover effects for form containers to prevent interference */
+.star-wars-card.contact-form-card:hover {
+  transform: none;
+  border-color: #00d4ff;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+}
+
+.star-wars-card.contact-form-card::before {
+  display: none;
+}
+
+/* Ensure form inputs are always clickable */
+.contact-form-card .star-wars-form input,
+.contact-form-card .star-wars-form textarea {
+  pointer-events: auto !important;
+  position: relative;
+  z-index: 100;
+  cursor: text;
+}
+
+.contact-form-card .star-wars-form label {
+  pointer-events: none;
+  position: relative;
+  z-index: 50;
+}
+
+.contact-form-card .star-wars-form button {
+  pointer-events: auto !important;
+  position: relative;
+  z-index: 100;
+  cursor: pointer;
+}
+
 .star-wars-button {
   background: linear-gradient(45deg, #00d4ff, #ff6b35);
   border: none;

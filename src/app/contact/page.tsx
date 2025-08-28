@@ -76,11 +76,11 @@ export default function ContactPage() {
 
       <div className="grid gap-12 lg:grid-cols-2">
         {/* Contact Form */}
-        <Card className="star-wars-card group hover:scale-[1.01] transition-transform duration-300" style={{ position: 'relative', zIndex: 1 }}>
+        <Card className="star-wars-card contact-form-card" style={{ position: 'relative', zIndex: 1, pointerEvents: 'auto' }}>
           <CardHeader className="pb-6">
             <CardTitle className="text-2xl star-wars-text star-wars-glow">Send a Message</CardTitle>
           </CardHeader>
-          <CardContent style={{ position: 'relative', zIndex: 2 }}>
+          <CardContent style={{ position: 'relative', zIndex: 2, pointerEvents: 'auto' }}>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-8 star-wars-form">
               <div className="space-y-2">
                 <label htmlFor="name" className="block text-sm font-medium text-cyan-400 uppercase tracking-wider">
@@ -94,7 +94,7 @@ export default function ContactPage() {
 
                   className="w-full rounded-md border border-cyan-400 bg-black/80 px-4 py-3 text-base text-white placeholder:text-cyan-400/60 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-50"
                   placeholder="Your name"
-                  style={{ pointerEvents: 'auto', zIndex: 10 }}
+                  style={{ pointerEvents: 'auto', zIndex: 10, position: 'relative' }}
                 />
                 {errors.name && (
                   <p className="mt-2 text-sm text-red-400">{errors.name.message}</p>
@@ -113,7 +113,7 @@ export default function ContactPage() {
 
                   className="w-full rounded-md border border-cyan-400 bg-black/80 px-4 py-3 text-base text-white placeholder:text-cyan-400/60 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-50"
                   placeholder="your.email@example.com"
-                  style={{ pointerEvents: 'auto', zIndex: 10 }}
+                  style={{ pointerEvents: 'auto', zIndex: 10, position: 'relative' }}
                 />
                 {errors.email && (
                   <p className="mt-2 text-sm text-red-400">{errors.email.message}</p>
@@ -131,7 +131,7 @@ export default function ContactPage() {
 
                   className="w-full rounded-md border border-cyan-400 bg-black/80 px-4 py-3 text-base text-white placeholder:text-cyan-400/60 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-200 resize-none disabled:cursor-not-allowed disabled:opacity-50"
                   placeholder="Tell me about your project or opportunity..."
-                  style={{ pointerEvents: 'auto', zIndex: 10 }}
+                  style={{ pointerEvents: 'auto', zIndex: 10, position: 'relative' }}
                 />
                 {errors.message && (
                   <p className="mt-2 text-sm text-red-400">{errors.message.message}</p>
